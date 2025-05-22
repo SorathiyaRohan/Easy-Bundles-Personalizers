@@ -3,7 +3,7 @@
 client_id = "0789d09cef73855091e3d3d754165906"
 name = "Easy Bundles & Personalizer"
 handle = "easy-bundles-personalizer"
-application_url = "https://communist-counseling-vhs-reference.trycloudflare.com"
+application_url = "https://influenced-mapping-residential-mainstream.trycloudflare.com"
 embedded = true
 
 [build]
@@ -27,9 +27,9 @@ scopes = "write_products"
 
 [auth]
 redirect_urls = [
-  "https://communist-counseling-vhs-reference.trycloudflare.com/auth/callback",
-  "https://communist-counseling-vhs-reference.trycloudflare.com/auth/shopify/callback",
-  "https://communist-counseling-vhs-reference.trycloudflare.com/api/auth/callback"
+  "https://influenced-mapping-residential-mainstream.trycloudflare.com/auth/callback",
+  "https://influenced-mapping-residential-mainstream.trycloudflare.com/auth/shopify/callback",
+  "https://influenced-mapping-residential-mainstream.trycloudflare.com/api/auth/callback"
 ]
 
 [pos]

@@ -1,5 +1,5 @@
 import { useLoaderData } from '@remix-run/react';
-import { Page, Card, Layout, Form, FormLayout, Checkbox, TextField, Button } from '@shopify/polaris';
+import { Page, LegacyCard, Layout, Form, FormLayout, Checkbox, TextField, Button } from '@shopify/polaris';
 import { useState, useCallback } from 'react';
 // ✅ Provide a loader function
 export const loader = async (request) => {
@@ -22,37 +22,32 @@ export default function Login() {
 
     const handleEmailChange = useCallback((value) => setEmail(value), [])
     return (
-        <Page fullWidth>
+        <Page>
             <Layout>
-            <Card>
                 <Layout.Section>
-                    <Form onSubmit={handleSubmit}>
-                        <FormLayout>
-                            <Checkbox
-                                label="Sign up for the Polaris newsletter"
-                                checked={newsletter}
-                                onChange={handleNewsLetterChange}
-                            />
+                    <LegacyCard sectioned>
+                        <Text variant="headingMd" as="h2">Login</Text>
+                        <Form onSubmit={handleSubmit}>
+                            <FormLayout>
+                                <TextField
+                                    value={email}
+                                    onChange={handleEmailChange}
+                                    label="Email"
+                                    type="email"
+                                    autoComplete="email"
+                                    helpText={
+                                        <span>
+                                            We’ll use this email address to inform you on future changes to
+                                            Polaris.
+                                        </span>
+                                    }
+                                />
 
-                            <TextField
-                                value={email}
-                                onChange={handleEmailChange}
-                                label="Email"
-                                type="email"
-                                autoComplete="email"
-                                helpText={
-                                    <span>
-                                        We’ll use this email address to inform you on future changes to
-                                        Polaris.
-                                    </span>
-                                }
-                            />
-
-                            <Button submit>Submit</Button>
-                        </FormLayout>
-                    </Form>
+                                <Button variant="primary" fullWidth>Submit</Button>
+                            </FormLayout>
+                        </Form>
+                    </LegacyCard>
                 </Layout.Section>
-                </Card>
             </Layout>
         </Page>
     );
